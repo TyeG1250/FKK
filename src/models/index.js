@@ -11,9 +11,9 @@ if (process.env.DISABLE_DB_LOGGING === 'true') {
 }
 
 let sequelize
-if (process.env.HEROKU_POSTGRESQL_COPPER_URL) {
+if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(
-    process.env[process.env.HEROKU_POSTGRESQL_COPPER_URL],
+    process.env[process.env.DATABASE_URL],
     config,
   )
 } else {
